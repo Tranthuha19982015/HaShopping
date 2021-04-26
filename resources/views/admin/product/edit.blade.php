@@ -76,8 +76,8 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Nhập nội dung</label>
-                            <textarea name="contents" class="form-control tinymce_edit_init"
-                                      rows="8" {!!$product->content!!}></textarea>
+                            <textarea name="contents" class="form-control"
+                                      rows="4">{{$product->content}}</textarea>
                         </div>
                     </div>
 
@@ -93,7 +93,6 @@
 
 @section('js')
     <script src="{{ asset('vendors/select2/select2.min.js') }}"></script>
-{{--    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>--}}
     <script src="{{ asset('admins/product/add/add.js') }}"></script>
 
 @endsection

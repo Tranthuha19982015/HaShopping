@@ -70,8 +70,8 @@
                         <div class="form-group">
                             <label>Mô tả sản phẩm</label>
                             <textarea name="contents"
-                                      class="form-control tinymce_edit_init @error('contents') is-invalid @enderror"
-                                      rows="8">
+                                      class="form-control @error('contents') is-invalid @enderror"
+                                      rows="4">
                                  {{old('contents')}}
                             </textarea>
                             @error('contents')
@@ -92,8 +92,6 @@
 
 @section('js')
     <script src="{{ asset('vendors/select2/select2.min.js') }}"></script>
-{{--    <script src="//cdn.tinymce.com/5/tinymce.min.js"></script>--}}
-    {{--    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
     <script src="{{ asset('admins/product/add/add.js') }}"></script>
 
 @endsection
