@@ -9,12 +9,15 @@ use App\Product;
 use App\ProductImage;
 use App\ProductTag;
 use App\Tag;
+use App\Traits\StorageImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class AdminProductController extends Controller
 {
+    use StorageImageTrait;
+
     private $category;
     private $product;
     private $productImage;
