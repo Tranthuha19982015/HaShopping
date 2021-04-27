@@ -54,38 +54,7 @@ Route::prefix('admin')->group(function () {
             ]);
     });
     //Menu
-//    Route::prefix('menus')->group(function () {
-//        Route::get('/',
-//            [
-//                'as' => 'menus.index',
-//                'uses' => 'MenuController@index'
-//            ]);
-//        Route::get('/create',
-//            [
-//                'as' => 'menus.create',
-//                'uses' => 'MenuController@create'
-//            ]);
-//        Route::post('/store',
-//            [
-//                'as' => 'menus.store',
-//                'uses' => 'MenuController@store'
-//            ]);
-//        Route::get('/edit/{id}',
-//            [
-//                'as' => 'menus.edit',
-//                'uses' => 'MenuController@edit'
-//            ]);
-//        Route::post('/update/{id}',
-//            [
-//                'as' => 'menus.update',
-//                'uses' => 'MenuController@update'
-//            ]);
-//        Route::get('/delete/{id}',
-//            [
-//                'as' => 'menus.delete',
-//                'uses' => 'MenuController@delete'
-//            ]);
-//    });
+
     //products
     Route::prefix('product')->group(function () {
         Route::get('/',
@@ -151,5 +120,15 @@ Route::prefix('admin')->group(function () {
                 'as' => 'slider.delete',
                 'uses' => 'AdminSliderController@delete'
             ]);
+    });
+
+    //Users
+    Route::prefix('users')->group(function () {
+        Route::get('/',
+            [
+                'as' => 'users.index',
+                'uses' => 'AdminUserController@index'
+            ]);
+
     });
 });
