@@ -149,6 +149,11 @@ Route::prefix('admin')->group(function () {
                 'as' => 'users.update',
                 'uses' => 'AdminUserController@update'
             ]);
+        Route::get('/delete/{id}',
+            [
+                'as' => 'users.delete',
+                'uses' => 'AdminUserController@delete'
+            ]);
 
     });
 });
