@@ -129,6 +129,26 @@ Route::prefix('admin')->group(function () {
                 'as' => 'users.index',
                 'uses' => 'AdminUserController@index'
             ]);
+        Route::get('/create',
+            [
+                'as' => 'users.create',
+                'uses' => 'AdminUserController@create'
+            ]);
+        Route::post('/store',
+            [
+                'as' => 'users.store',
+                'uses' => 'AdminUserController@store'
+            ]);
+        Route::get('/edit/{id}',
+            [
+                'as' => 'users.edit',
+                'uses' => 'AdminUserController@edit'
+            ]);
+        Route::post('/update/{id}',
+            [
+                'as' => 'users.update',
+                'uses' => 'AdminUserController@update'
+            ]);
 
     });
 });
