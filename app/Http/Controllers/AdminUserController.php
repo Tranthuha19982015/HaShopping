@@ -59,7 +59,7 @@ class AdminUserController extends Controller
     {
         $roles = $this->role->all();
         $user = $this->user->find($id);
-        $rolesOfUser = $user->roles();
+        $rolesOfUser = $user->roles;
         return view('admin.user.edit', compact('roles', 'user', 'rolesOfUser'));
     }
 

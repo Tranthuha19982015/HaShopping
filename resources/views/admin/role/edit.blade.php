@@ -14,11 +14,12 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('partials.content_header',['name' => 'Roles', 'key' => 'Add'])
+        @include('partials.content_header',['name' => 'Roles', 'key' => 'Edit'])
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <form action="{{route('roles.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('roles.update', ['id'=>$role->id])}}" method="post"
+                          enctype="multipart/form-data">
                         <div class="col-md-12">
                             @csrf
                             <div class="form-group">
@@ -26,7 +27,7 @@
                                 <input type="text" name="name"
                                        class="form-control"
                                        placeholder="Nhập tên vai trò"
-                                       value="{{old('name')}}">
+                                       value="{{$role->name}}">
 
                             </div>
 
@@ -35,7 +36,7 @@
                                 <textarea name="display_name" rows="4"
                                           class="form-control"
                                           placeholder="Nhập mô tả"
-                                >{{old('display_name')}}</textarea>
+                                >{{$role->display_name}}</textarea>
                             </div>
                         </div>
                         <div class="col-md-12" style="margin-left: 10px;">
@@ -54,6 +55,7 @@
                                                     <h5 class="card-title">
                                                         <label for="">
                                                             <input type="checkbox"
+                                                                   {{$permissionsChecked->contains('id',$pmChild->id)?'checked':''}}
                                                                    class="checkbox_childrent"
                                                                    name="permission_id[]"
                                                                    value="{{$pmChild->id}}">
@@ -68,7 +70,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Sửa</button>
                     </form>
                 </div>
             </div>
