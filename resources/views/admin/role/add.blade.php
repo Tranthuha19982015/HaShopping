@@ -38,12 +38,20 @@
                                 >{{old('display_name')}}</textarea>
                             </div>
                         </div>
-                        <div class="col-md-12" style="margin-left: 10px;">
+
+                        <div class="col-md-12">
                             <div class="row">
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="checkbox" class="checkall">
+                                        Check All
+                                    </label>
+                                </div>
+
                                 @foreach($permissionsParent as $pmParent)
-                                    <div class="card border-primary mb-3">
+                                    <div class="card border-primary mb-3 col-md-12">
                                         <div class="card-header">
-                                            <label for="">
+                                            <label>
                                                 <input type="checkbox" value="" class="checkbox_wrapper">
                                             </label>
                                             Module {{$pmParent->name}}
@@ -52,7 +60,7 @@
                                             @foreach($pmParent->permissionsChildrent as $pmChild)
                                                 <div class="card-body text-primary col-md-3">
                                                     <h5 class="card-title">
-                                                        <label for="">
+                                                        <label>
                                                             <input type="checkbox"
                                                                    class="checkbox_childrent"
                                                                    name="permission_id[]"

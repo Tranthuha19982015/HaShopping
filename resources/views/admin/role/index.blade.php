@@ -4,13 +4,10 @@
     <title>Trang chu</title>
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="{{asset('admins/slider/index/index.css')}}">
-@endsection
 
 @section('js')
     <script src="{{ asset('vendors/sweetAlert2/sweetalert2@10.js') }}"></script>
-    <script src="{{ asset('admins/slider/index/index.js') }}"></script>
+    <script src="{{ asset('admins/role/index/index.js') }}"></script>
 @endsection
 
 @section('content')
@@ -43,7 +40,7 @@
                                         <a href="{{route('roles.edit', ['id'=>$role->id])}}"
                                            class="btn btn-default">Sửa</a>
                                         <a href=""
-                                           data-url=""
+                                           data-url="{{route('roles.delete',['id'=>$role->id])}}"
                                            class="btn btn-danger action_delete">Xóa</a>
                                     </td>
                                 </tr>

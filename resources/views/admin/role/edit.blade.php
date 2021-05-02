@@ -20,6 +20,7 @@
                 <div class="row">
                     <form action="{{route('roles.update', ['id'=>$role->id])}}" method="post"
                           enctype="multipart/form-data">
+
                         <div class="col-md-12">
                             @csrf
                             <div class="form-group">
@@ -39,10 +40,17 @@
                                 >{{$role->display_name}}</textarea>
                             </div>
                         </div>
-                        <div class="col-md-12" style="margin-left: 10px;">
+                        <div class="col-md-12">
                             <div class="row">
+                                <div class="col-md-12">
+                                    <label>
+                                        <input type="checkbox" class="checkall">
+                                        Check All
+                                    </label>
+                                </div>
+
                                 @foreach($permissionsParent as $pmParent)
-                                    <div class="card border-primary mb-3">
+                                    <div class="card border-primary mb-3 col-md-12">
                                         <div class="card-header">
                                             <label for="">
                                                 <input type="checkbox" value="" class="checkbox_wrapper">

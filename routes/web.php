@@ -88,6 +88,7 @@ Route::prefix('admin')->group(function () {
                 'uses' => 'AdminProductController@delete'
             ]);
     });
+
     //Sliders
     Route::prefix('slider')->group(function () {
         Route::get('/',
@@ -157,6 +158,7 @@ Route::prefix('admin')->group(function () {
 
     });
 
+    //Roles
     Route::prefix('roles')->group(function () {
         Route::get('/',
             [
@@ -182,6 +184,11 @@ Route::prefix('admin')->group(function () {
             [
                 'as' => 'roles.update',
                 'uses' => 'AdminRoleController@update'
+            ]);
+        Route::get('/delete/{id}',
+            [
+                'as' => 'roles.delete',
+                'uses' => 'AdminRoleController@delete'
             ]);
     });
 });
