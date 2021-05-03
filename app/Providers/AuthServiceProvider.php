@@ -25,25 +25,24 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('category-list', function ($user) {
-            return $user->checkPermissionAccess(config('permissions.access.list-category'));
-        });
+        //Category
+        Gate::define('category-list', 'App\Policies\CategoryPolicy@view');
+        Gate::define('category-add', 'App\Policies\CategoryPolicy@create');
+        Gate::define('category-edit', 'App\Policies\CategoryPolicy@update');
+        Gate::define('category-delete', 'App\Policies\CategoryPolicy@delete');
 
-        Gate::define('category-add', function ($user) {
-            return $user->checkPermissionAccess('category_add');
-        });
+        //Product
+        Gate::define('product-list', 'App\Policies\ProductPolicy@view');
+        Gate::define('product-add', 'App\Policies\ProductPolicy@create');
+        Gate::define('product-edit', 'App\Policies\ProductPolicy@update');
+        Gate::define('product-delete', 'App\Policies\ProductPolicy@delete');
 
-        Gate::define('category-edit', function ($user) {
-            return $user->checkPermissionAccess('category_edit');
-        });
+        //Slider
+        Gate::define('slider-list', 'App\Policies\SliderPolicy@view');
+        Gate::define('slider-add', 'App\Policies\SliderPolicy@create');
+        Gate::define('slider-edit', 'App\Policies\SliderPolicy@update');
+        Gate::define('slider-delete', 'App\Policies\SliderPolicy@delete');
 
-        Gate::define('product-list', function ($user) {
-            return $user->checkPermissionAccess(config('permissions.access.list-product'));
-        });
-
-        Gate::define('slider_list', function ($user) {
-            return $user->checkPermissionAccess(config('permissions.access.list-slider'));
-        });
 
         Gate::define('user_list', function ($user) {
             return $user->checkPermissionAccess(config('permissions.access.list-user'));

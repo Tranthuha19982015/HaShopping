@@ -53,7 +53,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}',
             [
                 'as' => 'categories.delete',
-                'uses' => 'CategoryController@delete'
+                'uses' => 'CategoryController@delete',
+                'middleware' => 'can:category-delete'
             ]);
     });
     //Menu
@@ -69,7 +70,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/create',
             [
                 'as' => 'product.create',
-                'uses' => 'AdminProductController@create'
+                'uses' => 'AdminProductController@create',
+                'middleware' => 'can:product-add'
             ]);
         Route::post('/store',
             [
@@ -79,7 +81,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}',
             [
                 'as' => 'product.edit',
-                'uses' => 'AdminProductController@edit'
+                'uses' => 'AdminProductController@edit',
+                'middleware' => 'can:product-edit'
             ]);
         Route::post('/update/{id}',
             [
@@ -89,7 +92,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}',
             [
                 'as' => 'product.delete',
-                'uses' => 'AdminProductController@delete'
+                'uses' => 'AdminProductController@delete',
+                'middleware' => 'can:product-delete'
             ]);
     });
 
@@ -104,7 +108,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/create',
             [
                 'as' => 'slider.create',
-                'uses' => 'AdminSliderController@create'
+                'uses' => 'AdminSliderController@create',
+                'middleware' => 'can:slider-add'
             ]);
         Route::post('/store',
             [
@@ -114,7 +119,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}',
             [
                 'as' => 'slider.edit',
-                'uses' => 'AdminSliderController@edit'
+                'uses' => 'AdminSliderController@edit',
+                'middleware' => 'can:slider-edit'
             ]);
         Route::post('/update/{id}',
             [
@@ -124,7 +130,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id}',
             [
                 'as' => 'slider.delete',
-                'uses' => 'AdminSliderController@delete'
+                'uses' => 'AdminSliderController@delete',
+                'middleware' => 'can:slider-delete'
             ]);
     });
 
