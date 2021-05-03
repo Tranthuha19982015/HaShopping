@@ -25,12 +25,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/',
             [
                 'as' => 'categories.index',
-                'uses' => 'CategoryController@index'
+                'uses' => 'CategoryController@index',
+                'middleware' => 'can:category-list'
             ]);
         Route::get('/create',
             [
                 'as' => 'categories.create',
-                'uses' => 'CategoryController@create'
+                'uses' => 'CategoryController@create',
+                'middleware' => 'can:category-add'
             ]);
         Route::post('/store',
             [
@@ -40,7 +42,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}',
             [
                 'as' => 'categories.edit',
-                'uses' => 'CategoryController@edit'
+                'uses' => 'CategoryController@edit',
+                'middleware' => 'can:category-edit'
             ]);
         Route::post('/update/{id}',
             [
@@ -60,7 +63,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/',
             [
                 'as' => 'product.index',
-                'uses' => 'AdminProductController@index'
+                'uses' => 'AdminProductController@index',
+                'middleware' => 'can:product-list'
             ]);
         Route::get('/create',
             [
@@ -94,7 +98,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/',
             [
                 'as' => 'slider.index',
-                'uses' => 'AdminSliderController@index'
+                'uses' => 'AdminSliderController@index',
+                'middleware' => 'can:slider-list'
             ]);
         Route::get('/create',
             [
@@ -189,6 +194,21 @@ Route::prefix('admin')->group(function () {
             [
                 'as' => 'roles.delete',
                 'uses' => 'AdminRoleController@delete'
+            ]);
+    });
+
+    //Permissions
+    Route::prefix('permissions')->group(function () {
+        Route::get('/create',
+            [
+                'as' => 'permissions.create',
+                'uses' => 'AdminPermissionController@createPermission'
+            ]);
+
+        Route::post('/store',
+            [
+                'as' => 'permissions.store',
+                'uses' => 'AdminPermissionController@store'
             ]);
     });
 });

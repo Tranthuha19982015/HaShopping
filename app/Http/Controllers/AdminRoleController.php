@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class AdminRoleController extends Controller
 {
     use DeleteModelTrait;
+
     private $role;
     private $permission;
 

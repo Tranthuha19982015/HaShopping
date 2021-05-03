@@ -74,7 +74,7 @@ class AdminUserController extends Controller
             ]);
             $user = $this->user->find($id);
             $user->roles()->sync($request->role_id);
-            dd($user);
+
             DB::commit();
             return redirect()->route('users.index');
         } catch (\Exception $exception) {
