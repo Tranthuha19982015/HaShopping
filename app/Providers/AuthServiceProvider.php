@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\PermissionGateAndPolicyAccess;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -25,31 +26,19 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //Category
-        Gate::define('category-list', 'App\Policies\CategoryPolicy@view');
-        Gate::define('category-add', 'App\Policies\CategoryPolicy@create');
-        Gate::define('category-edit', 'App\Policies\CategoryPolicy@update');
-        Gate::define('category-delete', 'App\Policies\CategoryPolicy@delete');
-
-        //Product
-        Gate::define('product-list', 'App\Policies\ProductPolicy@view');
-        Gate::define('product-add', 'App\Policies\ProductPolicy@create');
-        Gate::define('product-edit', 'App\Policies\ProductPolicy@update');
-        Gate::define('product-delete', 'App\Policies\ProductPolicy@delete');
-
-        //Slider
-        Gate::define('slider-list', 'App\Policies\SliderPolicy@view');
-        Gate::define('slider-add', 'App\Policies\SliderPolicy@create');
-        Gate::define('slider-edit', 'App\Policies\SliderPolicy@update');
-        Gate::define('slider-delete', 'App\Policies\SliderPolicy@delete');
+        //define permission
+        $gate_policy = new PermissionGateAndPolicyAccess();
+        $gate_policy->setGateAndPolicyAccess();
 
 
-        Gate::define('user_list', function ($user) {
-            return $user->checkPermissionAccess(config('permissions.access.list-user'));
-        });
+//        Gate::define('product-list', function ($user) {
+//            return $user->checkPermissionAccess(config('permissions.access.list-product'));
+//        });
 
         Gate::define('role_list', function ($user) {
             return $user->checkPermissionAccess(config('permissions.access.list-role'));
         });
     }
+
+
 }

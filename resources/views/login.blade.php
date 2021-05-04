@@ -38,18 +38,19 @@
                 <div id="login-box" class="col-md-12">
                     <form id="login-form" class="form" action="" method="post">
                         @csrf
-                        <h3 class="text-center">Login</h3>
+                        <h3 class="text-center">Đăng nhập</h3>
                         <div class="form-group">
                             <label>Email:</label><br>
-                            <input type="text" name="email" id="username" class="form-control">
+                            <input type="email" name="email" id="username" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">
+                            <label>Mật khẩu:</label><br>
+                            <input type="password" name="password" id="password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label><span>Remember me</span> <span><input id="remember_me" name="remember_me" type="checkbox"></span></label><br>
-                            <input type="submit" name="submit" class="btn btn-primary btn-md" value="submit">
+                            <label><span>Nhớ mật khẩu</span> <span><input id="remember_me" name="remember_me"
+                                                                          type="checkbox"></span></label><br>
+                            <input type="submit" name="submit" class="btn btn-primary btn-md" value="Đăng nhập">
                         </div>
                         {{--                        <div id="register-link" class="text-right">--}}
                         {{--                            <a href="#" class="text-info">Register here</a>--}}
