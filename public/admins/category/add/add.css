@@ -1,0 +1,7 @@
+.alert-danger {
+    background-color: #f4f6f9;
+    color: red;
+    border-color: #f4f6f9;
+    padding: 1px;
+    margin-top: 5px;
+}

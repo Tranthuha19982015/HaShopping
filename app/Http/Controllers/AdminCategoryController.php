@@ -7,6 +7,7 @@ use App\Components\Recusive;
 use App\Http\Requests\CategoryAddRequest;
 use App\Traits\DeleteModelTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class AdminCategoryController extends Controller
@@ -36,14 +37,17 @@ class AdminCategoryController extends Controller
     public function store(CategoryAddRequest $request)
     {
         try {
+            DB::beginTransaction();
             $dataInsert = [
                 'name' => $request->name,
                 'parent_id' => $request->parent_id,
                 'slug' => str_slug($request->name)
             ];
             $this->category->create($dataInsert);
+            DB::commit();
             return redirect()->route('categories.index');
         } catch (\Exception $exception) {
+            DB::rollBack();
             Log::error('Lỗi : ' . $exception->getMessage() . '---Line:' . $exception->getLine());
         }
 
@@ -82,7 +86,6 @@ class AdminCategoryController extends Controller
 
     public function delete($id)
     {
-        $this->category->find($id)->delete();
-        return redirect()->route('categories.index');
+        return $this->DeleteModelTrait($id, $this->category);
     }
 }

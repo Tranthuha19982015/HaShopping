@@ -4,6 +4,11 @@
     <title>Trang chu</title>
 @endsection
 
+@section('js')
+    <script src="{{ asset('vendors/sweetAlert2/sweetalert2@10.js') }}"></script>
+    <script src="{{ asset('admins/category/index/list.js') }}"></script>
+@endsection
+
 @section('content')
     <div class="content-wrapper">
         @include('partials.content_header',['name' => 'category', 'key' => 'List'])
@@ -38,8 +43,9 @@
                                         @endcan
 
                                         @can('category-delete')
-                                            <a href="{{route('categories.delete',['id'=>$category->id])}}"
-                                               class="btn btn-danger">Xóa</a>
+                                            <a href=""
+                                               data-url="{{route('categories.delete',['id'=>$category->id])}}"
+                                               class="btn btn-danger action_delete">Xóa</a>
                                         @endcan
                                     </td>
                                 </tr>
