@@ -21,7 +21,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{route('product.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @can('product-add')
+                            <a href="{{route('product.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @endcan
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -47,11 +49,15 @@
                                     </td>
                                     <td>{{optional($productItem->category)->name}}</td>
                                     <td>
+
                                         <a href="{{route('product.edit',['id'=>$productItem->id])}}"
                                            class="btn btn-default">Sửa</a>
-                                        <a href=""
-                                           data-url="{{route('product.delete',['id'=>$productItem->id])}}"
-                                           class="btn btn-danger action_delete">Xóa</a>
+
+                                        @can('product-delete')
+                                            <a href=""
+                                               data-url="{{route('product.delete',['id'=>$productItem->id])}}"
+                                               class="btn btn-danger action_delete">Xóa</a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

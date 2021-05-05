@@ -21,7 +21,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{route('slider.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @can('slider-add')
+                            <a href="{{route('slider.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @endcan
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -42,11 +44,15 @@
                                     <td>{{$slider->description}}</td>
                                     <td><img class="img_slider" src="{{$slider->image_path}}" alt=""></td>
                                     <td>
-                                        <a href="{{route('slider.edit',['id'=>$slider->id])}}"
-                                           class="btn btn-default">Sửa</a>
-                                        <a href=""
-                                           data-url="{{route('slider.delete',['id'=>$slider->id])}}"
-                                           class="btn btn-danger action_delete">Xóa</a>
+                                        @can('slider-edit')
+                                            <a href="{{route('slider.edit',['id'=>$slider->id])}}"
+                                               class="btn btn-default">Sửa</a>
+                                        @endcan
+                                        @can('slider-delete')
+                                            <a href=""
+                                               data-url="{{route('slider.delete',['id'=>$slider->id])}}"
+                                               class="btn btn-danger action_delete">Xóa</a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
