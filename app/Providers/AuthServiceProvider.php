@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\Services\PermissionGateAndPolicyAccess;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -30,15 +29,5 @@ class AuthServiceProvider extends ServiceProvider
         $gate_policy = new PermissionGateAndPolicyAccess();
         $gate_policy->setGateAndPolicyAccess();
 
-
-//        Gate::define('product-list', function ($user) {
-//            return $user->checkPermissionAccess(config('permissions.access.list-product'));
-//        });
-
-        Gate::define('role_list', function ($user) {
-            return $user->checkPermissionAccess(config('permissions.access.list-role'));
-        });
     }
-
-
 }

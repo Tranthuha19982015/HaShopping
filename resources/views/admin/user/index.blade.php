@@ -21,7 +21,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{route('users.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @can('user-add')
+                            <a href="{{route('users.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @endcan
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -41,11 +43,15 @@
                                     <td>{{$user->email}}</td>
 
                                     <td>
-                                        <a href="{{route('users.edit',['id'=>$user->id])}}"
-                                           class="btn btn-default">Sửa</a>
-                                        <a href=""
-                                           data-url="{{route('users.delete',['id'=>$user->id])}}"
-                                           class="btn btn-danger action_delete">Xóa</a>
+                                        @can('user-edit')
+                                            <a href="{{route('users.edit',['id'=>$user->id])}}"
+                                               class="btn btn-default">Sửa</a>
+                                        @endcan
+                                        @can('user-delete')
+                                            <a href=""
+                                               data-url="{{route('users.delete',['id'=>$user->id])}}"
+                                               class="btn btn-danger action_delete">Xóa</a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

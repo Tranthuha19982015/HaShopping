@@ -11,6 +11,7 @@ class PermissionGateAndPolicyAccess
         $this->defineGateCategory();
         $this->defineGateProduct();
         $this->defineGateSlider();
+        $this->defineGateUser();
     }
 
     public function defineGateCategory()
