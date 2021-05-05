@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Components\Recusive;
+use App\Http\Requests\CategoryAddRequest;
+use App\Traits\DeleteModelTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AdminCategoryController extends Controller
 {
+    use DeleteModelTrait;
+
     private $category;
 
     public function __construct(Category $category)
@@ -28,14 +33,26 @@ class AdminCategoryController extends Controller
         return view('admin.category.index', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(CategoryAddRequest $request)
     {
-        $this->category->create([
-            'name' => $request->name,
-            'parent_id' => $request->parent_id,
-            'slug' => str_slug($request->name)
-        ]);
-        return redirect()->route('categories.index');
+        try {
+            $dataInsert = [
+                'name' => $request->name,
+                'parent_id' => $request->parent_id,
+                'slug' => str_slug($request->name)
+            ];
+            $this->category->create($dataInsert);
+            return redirect()->route('categories.index');
+        } catch (\Exception $exception) {
+            Log::error('Lỗi : ' . $exception->getMessage() . '---Line:' . $exception->getLine());
+        }
+
+//        $this->category->create([
+//            'name' => $request->name,
+//            'parent_id' => $request->parent_id,
+//            'slug' => str_slug($request->name)
+//        ]);
+//        return redirect()->route('categories.index');
     }
 
     public function getCategory($parentId)
