@@ -6,7 +6,7 @@ return [
         'list-product' => 'product_list',
         'list-slider' => 'slider_list',
         'list-user' => 'user_list',
-        'list_role' => 'role_list'
+        'list-role' => 'role_list'
     ],
 
     'table_module' => [
