@@ -18,7 +18,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{route('roles.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @can('role-add')
+                            <a href="{{route('roles.create')}}" class="btn btn-success float-right m-2">Thêm mới</a>
+                        @endcan
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -37,11 +39,15 @@
                                     <td>{{$role->name}}</td>
                                     <td>{{$role->display_name}}</td>
                                     <td>
-                                        <a href="{{route('roles.edit', ['id'=>$role->id])}}"
-                                           class="btn btn-default">Sửa</a>
-                                        <a href=""
-                                           data-url="{{route('roles.delete',['id'=>$role->id])}}"
-                                           class="btn btn-danger action_delete">Xóa</a>
+                                        @can('role-edit')
+                                            <a href="{{route('roles.edit', ['id'=>$role->id])}}"
+                                               class="btn btn-default">Sửa</a>
+                                        @endcan
+                                        @can('role-delete')
+                                            <a href=""
+                                               data-url="{{route('roles.delete',['id'=>$role->id])}}"
+                                               class="btn btn-danger action_delete">Xóa</a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

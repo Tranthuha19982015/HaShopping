@@ -58,7 +58,6 @@ class ProductPolicy
             return true;
         }
         return false;
-//            return $user->checkPermissionAccess('product_edit');
     }
 
     /**

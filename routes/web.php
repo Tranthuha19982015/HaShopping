@@ -30,6 +30,3 @@ Route::get('/home', function () {
 });
 
 
-Route::prefix('admin')->group(function () {
-
-});
