@@ -50,13 +50,6 @@ class AdminCategoryController extends Controller
             DB::rollBack();
             Log::error('Lỗi : ' . $exception->getMessage() . '---Line:' . $exception->getLine());
         }
-
-//        $this->category->create([
-//            'name' => $request->name,
-//            'parent_id' => $request->parent_id,
-//            'slug' => str_slug($request->name)
-//        ]);
-//        return redirect()->route('categories.index');
     }
 
     public function getCategory($parentId)
