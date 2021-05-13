@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Components\Recusive;
-use App\Http\Requests\ProductAddRequest;
 use App\Product;
 use App\ProductImage;
 use App\ProductTag;
@@ -56,7 +55,7 @@ class AdminProductController extends Controller
         return $htmlOption;
     }
 
-    public function store(ProductAddRequest $request)
+    public function store(Request $request)
     {
         try {
             DB::beginTransaction();
@@ -64,6 +63,7 @@ class AdminProductController extends Controller
                 'name' => $request->name,
                 'price' => $request->price,
                 'content' => $request->contents,
+                'quantity' => $request->quantity,
                 'user_id' => auth()->id(),
                 'category_id' => $request->category_id
             ];
@@ -116,9 +116,11 @@ class AdminProductController extends Controller
             $dataProductUpdate = [
                 'name' => $request->name,
                 'price' => $request->price,
+                'quantity' => $request->quantity,
                 'content' => $request->contents,
                 'user_id' => auth()->id(),
                 'category_id' => $request->category_id
+
             ];
             $dataUploadFeatureImage = $this->storageTraitUpload($request, 'feature_image_path', 'product');
             if (!empty($dataUploadFeatureImage)) {

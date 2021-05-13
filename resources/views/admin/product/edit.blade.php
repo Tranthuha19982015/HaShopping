@@ -20,15 +20,21 @@
 
                         @csrf
                         <div class="form-group">
-                            <label>Tên sản phẩm</label>
+                            <label>Tên sản phẩm*</label>
                             <input type="text" name="name" class="form-control"
                                    placeholder="Nhập tên sản phẩm" value="{{$product->name}}">
                         </div>
 
                         <div class="form-group">
-                            <label>Giá sản phẩm</label>
+                            <label>Giá*</label>
                             <input type="text" name="price" class="form-control"
                                    placeholder="Nhập giá sản phẩm" value="{{$product->price}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>số lượng*</label>
+                            <input type="text" name="quantity" class="form-control"
+                                   placeholder="Nhập số lượng sản phẩm" value="{{$product->quantity}}">
                         </div>
 
                         <div class="form-group">

@@ -32,6 +32,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Tên sản phẩm</th>
                                 <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
                                 <th scope="col">Hình ảnh</th>
                                 <th scope="col">Danh mục</th>
                                 <th scope="col">Thao tác</th>
@@ -43,6 +44,7 @@
                                     <th scope="row">{{$productItem->id}}</th>
                                     <td>{{$productItem->name}}</td>
                                     <td>{{number_format($productItem->price)}}</td>
+                                    <td>{{$productItem->quantity}}</td>
                                     <td>
                                         <img class="product_image_150_100" src="{{$productItem->feature_image_path}}"
                                              alt="">

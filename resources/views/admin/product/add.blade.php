@@ -29,10 +29,20 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Giá sản phẩm*</label>
+                            <label>Giá*</label>
                             <input type="text" name="price" class="form-control @error('price') is-invalid @enderror"
                                    placeholder="Nhập giá sản phẩm" value="{{old('price')}}">
                             @error('price')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Số lượng*</label>
+                            <input type="text" name="quantity"
+                                   class="form-control @error('quantity') is-invalid @enderror"
+                                   placeholder="Nhập số lượng sản phẩm" value="{{old('quantity')}}">
+                            @error('quantity')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
