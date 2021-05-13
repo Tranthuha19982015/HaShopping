@@ -52,7 +52,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary">Thêm</button>
                     </form>
                 </div>
             </div>

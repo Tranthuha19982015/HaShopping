@@ -44,7 +44,7 @@
                                 <div class="col-md-12">
                                     <label>
                                         <input type="checkbox" class="checkall">
-                                        Check All
+                                        Chọn tất cả
                                     </label>
                                 </div>
 
@@ -54,7 +54,7 @@
                                             <label>
                                                 <input type="checkbox" value="" class="checkbox_wrapper">
                                             </label>
-                                            Module {{$pmParent->name}}
+                                            Chức năng {{$pmParent->name}}
                                         </div>
                                         <div class="row">
                                             @foreach($pmParent->permissionsChildrent as $pmChild)
@@ -76,7 +76,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Thêm</button>
                     </form>
                 </div>
             </div>

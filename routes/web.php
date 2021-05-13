@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/login', [
+Route::get('/login ', [
     'as' => 'login',
     'uses' => 'AdminController@loginAdmin'
 ]);
-Route::post('/login', [
+Route::post('/login ', [
     'as' => 'login',
     'uses' => 'AdminController@postloginAdmin'
 ]);

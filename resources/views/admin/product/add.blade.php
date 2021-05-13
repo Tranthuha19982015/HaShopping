@@ -20,7 +20,7 @@
 
                         @csrf
                         <div class="form-group">
-                            <label>Tên sản phẩm</label>
+                            <label>Tên sản phẩm*</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                                    placeholder="Nhập tên sản phẩm" value="{{old('name')}}">
                             @error('name')
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Giá sản phẩm</label>
+                            <label>Giá sản phẩm*</label>
                             <input type="text" name="price" class="form-control @error('price') is-invalid @enderror"
                                    placeholder="Nhập giá sản phẩm" value="{{old('price')}}">
                             @error('price')
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Chọn danh mục</label>
+                            <label>Chọn danh mục*</label>
                             <select class="form-control select2_init @error('category_id') is-invalid @enderror"
                                     name="category_id">
                                 <option value="">Chọn danh mục</option>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Mô tả sản phẩm</label>
+                            <label>Mô tả sản phẩm*</label>
                             <textarea name="contents"
                                       class="form-control @error('contents') is-invalid @enderror"
                                       rows="4">
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary">Thêm</button>
                     </div>
 
                 </div>

@@ -26,28 +26,28 @@
                     <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Tên user</label>
+                            <label>Tên người dùng</label>
                             <input type="text" name="name"
                                    class="form-control"
                                    placeholder="Nhập tên">
                         </div>
 
                         <div class="form-group">
-                            <label>Email</label>
+                            <label>Địa chỉ email</label>
                             <input type="email" name="email"
                                    class="form-control"
                                    placeholder="Nhập email">
                         </div>
 
                         <div class="form-group">
-                            <label>Password</label>
+                            <label>Mật khẩu</label>
                             <input type="password" name="password"
                                    class="form-control"
                                    placeholder="Nhập password">
                         </div>
 
                         <div class="form-group">
-                            <label>Chọn vai trò</label>
+                            <label>Vai trò</label>
                             <select name="role_id[]" class="form-control select2_init" multiple>
                                 <option value=""></option>
                                 @foreach($roles as $role)
@@ -56,7 +56,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary">Thêm</button>
                     </form>
                 </div>
             </div>

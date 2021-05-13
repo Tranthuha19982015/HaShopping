@@ -33,7 +33,7 @@
                     <a href="{{ route('categories.index') }}" class="nav-link">
                         <i class="fas fa-list-alt"></i>
                         <p>
-                            Danh mục sản phẩm
+                            Quản lý danh mục
                         </p>
                     </a>
                 </li>
@@ -42,7 +42,7 @@
                     <a href="{{ route('product.index') }}" class="nav-link">
                         <i class="fab fa-product-hunt"></i>
                         <p>
-                            Sản phẩm
+                            Quản lý sản phẩm
                         </p>
                     </a>
                 </li>
@@ -51,7 +51,7 @@
                     <a href="{{route('slider.index')}}" class="nav-link">
                         <i class="fas fa-sliders-h"></i>
                         <p>
-                            Slider
+                            Quản lý Slider
                         </p>
                     </a>
                 </li>
@@ -60,7 +60,7 @@
                     <a href="{{route('users.index')}}" class="nav-link">
                         <i class="fas fa-users"></i>
                         <p>
-                            Danh sách nhân viên
+                            Quản lý tài khoản
                         </p>
                     </a>
                 </li>
@@ -69,7 +69,7 @@
                     <a href="{{route('roles.index')}}" class="nav-link">
                         <i class="fab fa-critical-role"></i>
                         <p>
-                            Danh sách vai trò
+                            Quản lý vai trò
                         </p>
                     </a>
                 </li>

@@ -30,7 +30,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Tên</th>
+                                <th scope="col">Tên người dùng</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Thao tác</th>
                             </tr>

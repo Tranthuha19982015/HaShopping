@@ -36,4 +36,5 @@ Route::prefix('product')->group(function () {
             'uses' => 'AdminProductController@delete',
             'middleware' => 'can:product-delete'
         ]);
+
 });

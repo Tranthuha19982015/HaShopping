@@ -41,11 +41,11 @@
                         <h3 class="text-center">Đăng nhập</h3>
                         <div class="form-group">
                             <label>Email:</label><br>
-                            <input type="email" name="email" id="username" class="form-control">
+                            <input type="email" name="email" id="username" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
                             <label>Mật khẩu:</label><br>
-                            <input type="password" name="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label><span>Nhớ mật khẩu</span> <span><input id="remember_me" name="remember_me"
