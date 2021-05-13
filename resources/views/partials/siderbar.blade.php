@@ -48,6 +48,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fas fa-th-list"></i>
+                        <p>
+                            Quản lý đơn hàng
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('slider.index')}}" class="nav-link">
                         <i class="fas fa-sliders-h"></i>
                         <p>
