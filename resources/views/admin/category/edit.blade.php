@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('partials.content_header',['name' => 'category', 'key' => 'Edit'])
+        @include('partials.content_header',['name' => 'Sửa', 'key' => 'danh mục'])
 
         <div class="container-fluid">
             <div class="row">

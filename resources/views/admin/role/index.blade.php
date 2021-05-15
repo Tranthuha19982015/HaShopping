@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('partials.content_header',['name' => 'Roles', 'key' => 'List'])
+        @include('partials.content_header',['name' => 'Danh sách', 'key' => 'vai trò'])
 
         <div class="content">
             <div class="container-fluid">

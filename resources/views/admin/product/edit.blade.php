@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('partials.content_header',['name' => 'product', 'key' => 'Edit'])
+        @include('partials.content_header',['name' => 'Sửa', 'key' => 'sản phẩm'])
 
         <form action="{{route('product.update',['id'=>$product->id])}}" method="post" enctype="multipart/form-data">
             <div class="container-fluid">
