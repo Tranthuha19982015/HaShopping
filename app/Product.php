@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use SoftDeletes;
+
     protected $guarded = [];
 
     public function images()
@@ -21,10 +22,13 @@ class Product extends Model
             'product_id', 'tag_id')->withTimestamps();
     }
 
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id');
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
-    public function productImages(){
-        return $this->hasMany(ProductImage::class,'product_id');
+
+    public function productImages()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id');
     }
 }
