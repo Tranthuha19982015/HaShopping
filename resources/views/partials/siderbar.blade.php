@@ -48,7 +48,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('orders.index')}}" class="nav-link">
                         <i class="fas fa-th-list"></i>
                         <p>
                             Quản lý đơn hàng
