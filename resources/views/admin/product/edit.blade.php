@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="content-wrapper">
-        @include('partials.content_header',['name' => 'Sửa', 'key' => 'sản phẩm'])
+        @include('partials.content_header',['name' => 'Sửa thông tin', 'key' => 'sản phẩm'])
 
         <form action="{{route('product.update',['id'=>$product->id])}}" method="post" enctype="multipart/form-data">
             <div class="container-fluid">
@@ -42,7 +42,7 @@
                             <input type="file" name="feature_image_path" class="form-control-file">
                             <div class="col-md-12 container_feature_image">
                                 <div class="row">
-                                    <img class="feature_image_product" src="{{$product->feature_image_path}}" alt="">
+                                    <img style="max-width: 15%;" src="{{$product->feature_image_path}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="row">
                                     @foreach($product->productImages as $productImageItem)
                                         <div class="col-md-3">
-                                            <img class="image_detail_product" src="{{$productImageItem->image_path}}"
+                                            <img style="max-width: 68%;" src="{{$productImageItem->image_path}}"
                                                  alt="">
                                         </div>
                                     @endforeach

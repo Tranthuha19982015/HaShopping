@@ -4,10 +4,6 @@
     <title>Trang chu</title>
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="{{asset('admins/slider/index/index.css')}}">
-@endsection
-
 @section('js')
     <script src="{{ asset('vendors/sweetAlert2/sweetalert2@10.js') }}"></script>
     <script src="{{ asset('admins/slider/index/index.js') }}"></script>
@@ -32,7 +28,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Tên slider</th>
                                 <th scope="col">Mô tả</th>
-                                <th scope="col">Hình ảnh</th>
+                                <th scope="col" style="width: 450px;">Hình ảnh</th>
                                 <th scope="col">Thao tác</th>
                             </tr>
                             </thead>
@@ -42,7 +38,7 @@
                                     <th scope="row">{{$slider->id}}</th>
                                     <td>{{$slider->name}}</td>
                                     <td>{{$slider->description}}</td>
-                                    <td><img class="img_slider" src="{{$slider->image_path}}" alt=""></td>
+                                    <td><img style="max-width: 50%;" src="{{$slider->image_path}}" alt=""></td>
                                     <td>
                                         @can('slider-edit')
                                             <a href="{{route('slider.edit',['id'=>$slider->id])}}"

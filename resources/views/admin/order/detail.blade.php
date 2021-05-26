@@ -36,6 +36,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">ID</th>
+                                <th scope="col" style="width: 200px;">Ảnh</th>
                                 <th scope="col">Tên sản phẩm</th>
                                 <th scope="col">Số lượng đặt</th>
                                 <th scope="col">Giá</th>
@@ -50,6 +51,8 @@
                                 @endphp
                                 <tr>
                                     <th scope="row">{{$orderDetailItem->id}}</th>
+                                    <td><img style="max-width: 40%;" src="{{$orderDetailItem->feature_image_path}}"
+                                             alt=""></td>
                                     <td>{{$orderDetailItem->name}} </td>
                                     <td>
                                         {{$orderDetailItem->order_quantity}}
@@ -67,16 +70,16 @@
                         </table>
                     </div>
                     <div class="col-md-12" style="border-top: 1px solid #dee2e6;">
-                        <label style="float: right; margin-right: 111px;">
+                        <label style="float: right; margin-right: 69px;">
                             Tạm tính: {{number_format($total,0)}} VND</label>
                     </div>
 
                     <div class="col-md-12">
-                        <label style="float: right; margin-right: 133px;">
+                        <label style="float: right; margin-right: 99px;">
                             Phí ship: {{number_format(30000,0)}} VND</label>
                     </div>
                     <div class="col-md-12">
-                        <label style="float: right; margin-right: 112px;">
+                        <label style="float: right; margin-right: 67px;">
                             Tổng tiền: {{number_format($total+30000,0)}} VND</label>
                     </div>
                 </div>
