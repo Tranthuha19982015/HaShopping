@@ -31,11 +31,10 @@ class AdminOrderController extends Controller
         $orders = $this->orders->find($id);
         $order = \DB::table('orders')
             ->join('order_details', 'orders.id', '=', 'order_details.order_id')
-            ->join('customers', 'customers.id', '=', 'orders.customer_id')
+//            ->join('customers', 'customers.id', '=', 'orders.customer_id')
             ->join('products', 'products.id', '=', 'order_details.product_id')
             ->where('orders.id', '=', $id)
             ->get();
-//        dd($order);
         return view('admin.order.detail', compact('orders', 'order'));
     }
 }
