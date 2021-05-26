@@ -6,4 +6,10 @@ Route::prefix('orders')->group(function () {
             'as' => 'orders.index',
             'uses' => 'AdminOrderController@index'
         ]);
+
+    Route::get('/detail/{id}',
+        [
+            'as' => 'orders.detail',
+            'uses' => 'AdminOrderController@detail'
+        ]);
 });

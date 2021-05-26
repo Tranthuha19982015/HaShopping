@@ -4,15 +4,6 @@
     <title>List order</title>
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="{{ asset('admins/product/index/list.css') }}">
-@endsection
-
-@section('js')
-    <script src="{{ asset('vendors/sweetAlert2/sweetalert2@10.js') }}"></script>
-    <script src="{{ asset('admins/product/index/list.js') }}"></script>
-@endsection
-
 @section('content')
     <div class="content-wrapper">
         @include('partials.content_header',['name' => 'Danh sách', 'key' => 'đơn hàng'])
@@ -27,6 +18,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Tên khách hàng</th>
                                 <th scope="col">Tổng tiền</th>
+                                <th scope="col">Ngày đặt hàng</th>
                                 <th scope="col">Thao tác</th>
                             </tr>
                             </thead>
@@ -35,10 +27,11 @@
                                 <tr>
                                     <th scope="row">{{$orderItem->id}}</th>
                                     <td>{{optional($orderItem->customer)->name}}</td>
-                                    <td>{{number_format($orderItem->total_cost)}} VND</td>
-
+                                    <td>{{number_format($orderItem->total_cost,0)}} VND</td>
+                                    <td>{{date('d-m-Y', strtotime($orderItem->created_at))}} </td>
                                     <td>
-                                        <a href="" class="btn btn-danger">Xem chi tiết</a>
+                                        <a href="{{route('orders.detail',['id'=>$orderItem->id])}}"
+                                           class="btn btn-info">Xem chi tiết</a>
                                     </td>
                                 </tr>
                             @endforeach

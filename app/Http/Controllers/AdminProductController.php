@@ -47,14 +47,6 @@ class AdminProductController extends Controller
         return view('admin.product.add', compact('htmlOption'));
     }
 
-    public function getCategory($parentId)
-    {
-        $data = $this->category->all();
-        $recusive = new Recusive($data);
-        $htmlOption = $recusive->categoryRecusive($parentId);
-        return $htmlOption;
-    }
-
     public function store(Request $request)
     {
         try {
@@ -100,6 +92,14 @@ class AdminProductController extends Controller
             DB::rollBack();
             Log::error('Message: ' . $exception->getMessage() . 'Line: ' . $exception->getLine());
         }
+    }
+
+    public function getCategory($parentId)
+    {
+        $data = $this->category->all();
+        $recusive = new Recusive($data);
+        $htmlOption = $recusive->categoryRecusive($parentId);
+        return $htmlOption;
     }
 
     public function edit($id)
