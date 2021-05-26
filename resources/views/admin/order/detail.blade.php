@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <label>Số điện thoại</label>
                             <input type="text" name="phone" disabled class="form-control"
-                                   value="{{optional($orders->customer)->phone}}">
+                                   value="0{{optional($orders->customer)->phone}}">
                         </div>
                         <div class="form-group">
                             <label>Địa chỉ</label>
