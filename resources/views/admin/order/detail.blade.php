@@ -67,16 +67,16 @@
                         </table>
                     </div>
                     <div class="col-md-12" style="border-top: 1px solid #dee2e6;">
-                        <label style="float: right; margin-right: 113px;">
+                        <label style="float: right; margin-right: 111px;">
                             Tạm tính: {{number_format($total,0)}} VND</label>
                     </div>
 
                     <div class="col-md-12">
-                        <label style="float: right; margin-right: 121px;">
+                        <label style="float: right; margin-right: 133px;">
                             Phí ship: {{number_format(30000,0)}} VND</label>
                     </div>
                     <div class="col-md-12">
-                        <label style="float: right; margin-right: 113px;">
+                        <label style="float: right; margin-right: 112px;">
                             Tổng tiền: {{number_format($total+30000,0)}} VND</label>
                     </div>
                 </div>
