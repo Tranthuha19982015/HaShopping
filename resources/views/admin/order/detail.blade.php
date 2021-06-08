@@ -16,6 +16,11 @@
                     @endphp
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>Mã đơn hàng</label>
+                            <input type="text" name="id" disabled class="form-control"
+                                   value="{{$orders->id}}">
+                        </div>
+                        <div class="form-group">
                             <label>Tên khách hàng</label>
                             <input type="text" name="name" disabled class="form-control"
                                    value="{{optional($orders->customer)->name}}">
@@ -75,7 +80,7 @@
                     </div>
 
                     <div class="col-md-12">
-                        <label style="float: right; margin-right: 99px;">
+                        <label style="float: right; margin-right: 84px;">
                             Phí ship: {{number_format(30000,0)}} VND</label>
                     </div>
                     <div class="col-md-12">

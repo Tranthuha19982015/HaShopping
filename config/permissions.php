@@ -6,7 +6,8 @@ return [
         'list-product' => 'product_list',
         'list-slider' => 'slider_list',
         'list-user' => 'user_list',
-        'list-role' => 'role_list'
+        'list-role' => 'role_list',
+        'list-order' => 'order_list'
     ],
 
     'table_module' => [
@@ -14,13 +15,15 @@ return [
         'product',
         'slider',
         'user',
-        'role'
+        'role',
+        'order'
     ],
     'module_childrent' => [
         'list',
         'add',
         'edit',
-        'delete'
+        'delete',
+        'detail'
     ]
 ];
 

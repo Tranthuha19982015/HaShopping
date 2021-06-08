@@ -32,7 +32,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Tên sản phẩm</th>
                                 <th scope="col">Giá</th>
-                                <th scope="col">Số lượng</th>
+                                <th scope="col">Số lượng có</th>
                                 <th scope="col" style="width: 200px;">Hình ảnh</th>
                                 <th scope="col">Danh mục</th>
                                 <th scope="col">Thao tác</th>
