@@ -4,7 +4,7 @@ function actionDelete(event) {
     let that = $(this);
 
     Swal.fire({
-        title: 'Bạn có chắc chắn xóa slider này?',
+        title: 'Bạn có chắc chắn xóa vai trò này?',
         text: "Bạn không thể hoàn tác sau khi xóa!!",
         icon: 'warning',
         showCancelButton: true,
